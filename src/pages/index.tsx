@@ -1,6 +1,6 @@
 import Head from "next/head";
 import axios from "axios";
-
+import Link from "next/link";
 interface quiz {
   id: number;
   name: string;
@@ -23,6 +23,16 @@ export default function Home(props: PageProps) {
         <h1 className="text-6xl text-black font-semibold">
           Quizzes List {props.quizzes[0].name}
         </h1>
+        <button>Create Quiz</button>
+        <div>
+          {props.quizzes.map((quiz) => (
+            <div key={quiz.id}>
+              <Link href={`/quiz/${quiz.id}`}>
+                <p>{quiz.name}</p>
+              </Link>
+            </div>
+          ))}
+        </div>
       </main>
     </>
   );
