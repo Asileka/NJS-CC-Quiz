@@ -41,28 +41,49 @@ export default function CreateNewQuiz() {
     <>
       <main>
         <Link href={`/`}>
-          <h4>To the main page</h4>
+          <h4 className="font-bold underline">To the main page</h4>
         </Link>
-        <h1 className="text-6xl text-black font-semibold">New Quiz</h1>
+        <h1 className="text-3xl font-bold">New Quiz</h1>
         <form ref={formRef}>
           <label>Name</label>
           <div>
-            <input name="addQuizName" type="text" />
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              name="addQuizName"
+              type="text"
+            />
           </div>
           <label>Question 1</label>
           <div>
-            <input name="addQuizQuestion1" type="text" />
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              name="addQuizQuestion1"
+              type="text"
+            />
           </div>
           <label>Question 2</label>
           <div>
-            <input name="addQuizQuestion2" type="text" />
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              name="addQuizQuestion2"
+              type="text"
+            />
           </div>
           <label>Question 3</label>
           <div>
-            <input name="addQuizQuestion3" type="text" />
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              name="addQuizQuestion3"
+              type="text"
+            />
           </div>
         </form>
-        <button onClick={() => addNewQuiz()}>Add</button>
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={() => addNewQuiz()}
+        >
+          Add
+        </button>
       </main>
     </>
   );

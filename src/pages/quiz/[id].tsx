@@ -1,6 +1,6 @@
 import React from "react";
 import { PrismaClient } from "@prisma/client";
-
+import Link from "next/link";
 interface quiz {
   id: number;
   name: string;
@@ -19,7 +19,10 @@ export default function QuizByID(props: PageProps) {
   return (
     <>
       <main>
-        <h1 className="text-6xl text-black font-semibold">{props.quiz.name}</h1>
+        <Link href={`/`}>
+          <h4 className="font-bold underline">To the main page</h4>
+        </Link>
+        <h1 className="text-3xl font-bold">{props.quiz.name}</h1>
         <div>
           <h3>Question 1</h3>
           <p>{props.quiz.question1}</p>
@@ -44,7 +47,9 @@ export default function QuizByID(props: PageProps) {
             <input type="radio" value="No" name="yesno1" /> No
           </div>
         </div>
-        <button>Submit</button>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Submit
+        </button>
       </main>
     </>
   );

@@ -19,21 +19,23 @@ export default function Home(props: PageProps) {
       <Head>
         <title>Ekaterina Tech Test </title>
       </Head>
-      <main>
-        <h1 className="text-6xl text-black font-semibold">
-          Quizzes List {props.quizzes[0].name}
-        </h1>
-        <Link href={`/create`}>
-          <button>Create Quiz</button>
-        </Link>
-        <div>
-          {props.quizzes.map((quiz) => (
-            <div key={quiz.id}>
-              <Link href={`/quiz/${quiz.id}`}>
-                <p>{quiz.name}</p>
-              </Link>
-            </div>
-          ))}
+      <main className="flex items-start justify-center h-screen">
+        <div className="text-center h-56 grid grid-cols-1 gap-4 content-center">
+          <h1 className="text-3xl font-bold">Quizzes List</h1>
+          <Link href={`/create`}>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Create Quiz
+            </button>
+          </Link>
+          <div>
+            {props.quizzes.map((quiz) => (
+              <div key={quiz.id}>
+                <Link href={`/quiz/${quiz.id}`}>
+                  <p className="font-bold underline">{quiz.name}</p>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </main>
     </>
