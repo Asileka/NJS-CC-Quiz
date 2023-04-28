@@ -2,10 +2,20 @@ import React from "react";
 import axios from "axios";
 import { useState, useRef } from "react";
 import Link from "next/link";
+interface quizProps {
+  addQuizName: string;
+  addQuizQuestion1: string;
+  addQuizQuestion2: string;
+  addQuizQuestion3: string;
+}
+
+interface FormRef {
+  addQuizName: HTMLInputElement;
+}
 
 export default function CreateNewQuiz() {
-  const formRef = useRef();
-  const [quizName, setQuizName] = useState("");
+  const formRef = useRef<HTMLFormElement>();
+
   async function addNewQuiz() {
     const {
       addQuizName,
@@ -13,6 +23,7 @@ export default function CreateNewQuiz() {
       addQuizQuestion2,
       addQuizQuestion3,
     } = formRef.current;
+
     const name = addQuizName.value;
     const question1 = addQuizQuestion1.value;
     const question2 = addQuizQuestion2.value;
