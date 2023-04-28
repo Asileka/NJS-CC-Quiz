@@ -23,7 +23,9 @@ export default function Home(props: PageProps) {
         <h1 className="text-6xl text-black font-semibold">
           Quizzes List {props.quizzes[0].name}
         </h1>
-        <button>Create Quiz</button>
+        <Link href={`/create`}>
+          <button>Create Quiz</button>
+        </Link>
         <div>
           {props.quizzes.map((quiz) => (
             <div key={quiz.id}>
